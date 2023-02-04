@@ -21,3 +21,7 @@ Filtering happen with dates and it is required, because noone wants to see their
 # Whole Transaction
 
 User can see whole transaction amount, also when user filter transactions user can see whole transaction but with filter.
+
+# Tests
+
+There are Unit tests where you can find how MVVM bindings and updates are working with tests. There are tests for both details and Main page. 
