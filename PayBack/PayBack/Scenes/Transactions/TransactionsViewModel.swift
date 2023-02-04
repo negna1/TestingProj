@@ -58,7 +58,7 @@ class TransactionsViewModel: TransactionsViewModelType {
         
         currentDataSource = []
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            self.callConvert()
+            self.fetchTransactions()
         }
         
         let idle: TransactionsViewModelOutput = Just(.idle(currentDataSource))
@@ -76,7 +76,7 @@ class TransactionsViewModel: TransactionsViewModelType {
                 default:
                     self.transactioItems = self.originaltransactioItems.filter({$0.transactionCategory == category})
                 }
-                self.updateWithTransactions(responseItems: self.transactioItems)
+                self.updateWithTransactions()
             }).store(in: &cancellables)
     }
     
@@ -95,7 +95,7 @@ class TransactionsViewModel: TransactionsViewModelType {
 
 //MARK: - Convert service call -
 extension TransactionsViewModel {
-    func callConvert()  {
+    func fetchTransactions()  {
         let response  =  MockService.shared.fetchAsync(filename: "PBTransactions", with: TransactionsResponse.self)
         self.stateSubject.send(.loading(showLoad: false))
         // MARK: - I WROTE REACHIBILITY IN MY OWN PACKAGE AND BECAUSE JSON IS NOT HERE I ALSOW WROTE HERE.
@@ -108,8 +108,8 @@ extension TransactionsViewModel {
         case .success(let succResp):
             core.saveTransactions(transactions: succResp)
             self.originaltransactioItems = succResp.items ?? []
-            self.transactioItems = self.originaltransactioItems
-            self.updateWithTransactions(responseItems: succResp.items ?? [])
+            self.filterWitDate()
+            self.updateWithTransactions()
         case .failure(let error):
             self.fetchCoreDataItems()
             self.stateSubject.send(.showError(error.localizedDescription))
@@ -119,16 +119,16 @@ extension TransactionsViewModel {
     private func fetchCoreDataItems() {
         Task {
             self.originaltransactioItems = await core.fetchRequest()
-            self.transactioItems = self.originaltransactioItems
-            self.updateWithTransactions(responseItems: transactioItems)
+            self.filterWitDate()
+            self.updateWithTransactions()
         }
     }
-    
-    func updateWithTransactions(responseItems: [TransactionsResponseItem]) {
-        let responseItems = responseItems.compactMap({$0}).sorted(by: {($0.transactionDetail?.bookingDate?.toDate() ?? Date()) < ($1.transactionDetail?.bookingDate?.toDate() ?? Date())})
-        
-        
-        let arrOfStrings = responseItems.map({ item in
+}
+
+//MARK: - Success Response functions and variable -
+extension TransactionsViewModel {
+    private var detailsAboutTransaction: [(String, String, UIImage, Double, String)] {
+        transactioItems.map({ item in
             let dispayName = item.partnerDisplayName ?? ""
             let dispayDescr = item.transactionDetail?.description ?? ""
             let title = "\(dispayName) - \(dispayDescr)"
@@ -138,11 +138,20 @@ extension TransactionsViewModel {
             let date = item.transactionDetail?.bookingDate?.toDate()?.yearMonthDayHourAndMinute ?? ""
             return (title, date, icon, amount, currency)
         })
-        currentDataSource = arrOfStrings.compactMap({ title in
+    }
+    
+    private func filterWitDate() {
+        originaltransactioItems = originaltransactioItems.compactMap({$0}).sorted(by: {($0.transactionDetail?.bookingDate?.toDate() ?? Date()) < ($1.transactionDetail?.bookingDate?.toDate() ?? Date())})
+        self.transactioItems = originaltransactioItems
+    }
+    
+    private func updateWithTransactions() {
+        currentDataSource = detailsAboutTransaction.compactMap({ title in
             CellType.title(title.0, title.1, title.2, title.3, title.4)
         })
+        let currency = transactioItems.first?.transactionDetail?.value?.currency
         currentDataSource.insert(CellType.wholeTransaction(amount: transactionFullAmount,
-                                                           Currency: arrOfStrings.first?.4 ?? "GEL"),
+                                                           Currency: currency ?? "GEL"),
                                  at: 0)
         self.stateSubject.send(.idle(currentDataSource))
     }
@@ -150,7 +159,7 @@ extension TransactionsViewModel {
 
 extension TransactionsViewModel {
     //TODO: - it should call like Task { await callConvertProd()}
-    func callConvertProd() async  {
+    func fetchTransactionsProd() async  {
         let urlRequest = URLRequest.transactions()
         let response = await URLSession.shared.fetchAsync(for: urlRequest,
                                                           with: TransactionsResponse.self)
@@ -159,8 +168,8 @@ extension TransactionsViewModel {
         case .success(let succResp):
             core.saveTransactions(transactions: succResp)
             self.originaltransactioItems = succResp.items ?? []
-            self.transactioItems = self.originaltransactioItems
-            self.updateWithTransactions(responseItems: succResp.items ?? [])
+            self.filterWitDate()
+            self.updateWithTransactions()
         case .failure(let error):
             self.fetchCoreDataItems()
             self.stateSubject.send(.showError(error.localizedDescription))

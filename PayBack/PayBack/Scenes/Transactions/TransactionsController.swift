@@ -55,6 +55,7 @@ class TransactionsController: UIViewController {
     
     override func viewDidLoad() {
         configureUI()
+        configureChipsView()
         bind(to: viewModel)
     }
     
@@ -64,34 +65,13 @@ class TransactionsController: UIViewController {
         tableView.dataSource = dataSource
     }
     
-    private func constrain() {
-        self.view.addSubview(tableView)
-        tableView.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(40)
-            make.trailing.leading.bottom.equalToSuperview()
-        }
-        
-        self.view.addSubview(chipsView)
-        
-        chipsView.snp.makeConstraints { make in
-            make.top.equalToSuperview()
-            make.trailing.leading.equalToSuperview()
-            
-        }
-        
+    private func configureChipsView() {
         let models = TransactionsResponseItem.CategoryType.allCases.map({$0.chips})
         let model = ChipsViewModel(dataSource: models) { index in
             self.categoryChange.send(TransactionsResponseItem.CategoryType.init(rawValue: index + 1) ?? .third)
             self.chipsView.configure(viewModel: self.viewModelChips(index: index))
         }
         chipsView.configure(viewModel: model)
-        
-        self.tableView.addSubview(activityView)
-        activityView.snp.makeConstraints { make in
-            make.center.equalToSuperview()
-            make.height.width.equalTo(60)
-        }
-        activityView.startAnimating()
     }
     
     private func viewModelChips(index: Int) -> ChipsViewModel {
@@ -160,6 +140,17 @@ class TransactionsController: UIViewController {
     }
 }
 
+//MARK: - Table View cell selection
+extension TransactionsController: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let snapshot = dataSource.snapshot()
+        
+        selection.send(snapshot.itemIdentifiers[indexPath.row])
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
+
 //MARK: - Alert
 extension TransactionsController {
     func showSimpleAlert(title: String, message: String) {
@@ -177,16 +168,41 @@ extension TransactionsController {
     }
 }
 
-extension TransactionsController: UITableViewDelegate {
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let snapshot = dataSource.snapshot()
+//MARK: - Constrain
+extension TransactionsController {
+    private func constrain() {
+        constrainChipsView()
+        constrainTableView()
+        constrainActivityView()
+    }
+    private func constrainTableView() {
+        self.view.addSubview(tableView)
+        tableView.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(40)
+            make.trailing.leading.bottom.equalToSuperview()
+        }
+    }
+    
+    private func constrainChipsView() {
+        self.view.addSubview(chipsView)
         
-        selection.send(snapshot.itemIdentifiers[indexPath.row])
-        tableView.deselectRow(at: indexPath, animated: true)
+        chipsView.snp.makeConstraints { make in
+            make.top.equalToSuperview()
+            make.trailing.leading.equalToSuperview()
+        }
+    }
+    
+    private func constrainActivityView() {
+        self.tableView.addSubview(activityView)
+        activityView.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+            make.height.width.equalTo(60)
+        }
+        activityView.startAnimating()
     }
 }
 
+//MARK: - Getters for test
 extension TransactionsController{
     var getTableView: UITableView {
         tableView

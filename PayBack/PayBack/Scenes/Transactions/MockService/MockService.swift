@@ -36,7 +36,6 @@ final class MockService {
         } catch {
             print(error)
         }
-        
         return nil
     }
 }
