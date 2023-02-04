@@ -1,0 +1,724 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5258170D298D115A00FA05BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52A91A0B298AC72700928B42 /* Assets.xcassets */; };
+		5258170E298D115A00FA05BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52A91A0D298AC72700928B42 /* LaunchScreen.storyboard */; };
+		52581710298D118600FA05BB /* PBTransactions.json in Resources */ = {isa = PBXBuildFile; fileRef = 52A91A2B298ACD4000928B42 /* PBTransactions.json */; };
+		52581721298D4CC800FA05BB /* TransactionViewModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52581720298D4CC800FA05BB /* TransactionViewModelMock.swift */; };
+		52581723298D4CD400FA05BB /* TransactionViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52581722298D4CD400FA05BB /* TransactionViewModelTest.swift */; };
+		52581725298D4CDF00FA05BB /* TransactionControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52581724298D4CDF00FA05BB /* TransactionControllerTest.swift */; };
+		52581727298D4ED700FA05BB /* Components in Frameworks */ = {isa = PBXBuildFile; productRef = 52581726298D4ED700FA05BB /* Components */; };
+		5258172B298D57F500FA05BB /* TransactionDetailsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5258172A298D57F500FA05BB /* TransactionDetailsViewModelTests.swift */; };
+		5258172D298D57FD00FA05BB /* TransactionDetailsViewModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5258172C298D57FD00FA05BB /* TransactionDetailsViewModelMock.swift */; };
+		5258172F298D580700FA05BB /* TransactionDetailsControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5258172E298D580700FA05BB /* TransactionDetailsControllerTests.swift */; };
+		52581731298E88CE00FA05BB /* CombineCore in Frameworks */ = {isa = PBXBuildFile; productRef = 52581730298E88CE00FA05BB /* CombineCore */; };
+		52581734298E8AB600FA05BB /* TransactionModelEntity.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 52581732298E8AB600FA05BB /* TransactionModelEntity.xcdatamodeld */; };
+		52581736298E8C3300FA05BB /* LocalTransactionCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52581735298E8C3300FA05BB /* LocalTransactionCoreData.swift */; };
+		52581738298EA35900FA05BB /* TransactionDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52581737298EA35900FA05BB /* TransactionDetailsController.swift */; };
+		52A91A03298AC72600928B42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A91A02298AC72600928B42 /* AppDelegate.swift */; };
+		52A91A05298AC72600928B42 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A91A04298AC72600928B42 /* SceneDelegate.swift */; };
+		52A91A18298AC77200928B42 /* TransactionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A91A17298AC77200928B42 /* TransactionsController.swift */; };
+		52A91A1A298AC77B00928B42 /* TransactionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A91A19298AC77B00928B42 /* TransactionsViewModel.swift */; };
+		52A91A22298AC82D00928B42 /* CombineCore in Frameworks */ = {isa = PBXBuildFile; productRef = 52A91A21298AC82D00928B42 /* CombineCore */; };
+		52A91A25298AC8E200928B42 /* TransactionModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A91A24298AC8E200928B42 /* TransactionModels.swift */; };
+		52A91A28298ACA2E00928B42 /* Components in Frameworks */ = {isa = PBXBuildFile; productRef = 52A91A27298ACA2E00928B42 /* Components */; };
+		52A91A2A298ACBCF00928B42 /* TransactionConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A91A29298ACBCF00928B42 /* TransactionConstants.swift */; };
+		52A91A2F298ACDB100928B42 /* MockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A91A2E298ACDB100928B42 /* MockService.swift */; };
+		52A91A31298ACECA00928B42 /* TransactionsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A91A30298ACECA00928B42 /* TransactionsResponse.swift */; };
+		52A91A33298B054200928B42 /* TransactionCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A91A32298B054200928B42 /* TransactionCategory.swift */; };
+		52A91A36298B0C3900928B42 /* Extension + Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A91A35298B0C3900928B42 /* Extension + Date.swift */; };
+		52A91A38298C3ACC00928B42 /* Extension + Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A91A37298C3ACC00928B42 /* Extension + Navigation.swift */; };
+		52A91A3D298C3BFF00928B42 /* TransactionDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A91A3C298C3BFF00928B42 /* TransactionDetailsViewModel.swift */; };
+		52A91A41298C3C4200928B42 /* TransactionDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A91A40298C3C4200928B42 /* TransactionDetailsModel.swift */; };
+		52A91A43298C411500928B42 /* TransactionsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A91A42298C411500928B42 /* TransactionsRouter.swift */; };
+		52A91A46298C4C9300928B42 /* TransactionsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A91A45298C4C9300928B42 /* TransactionsRequest.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5258171B298D47D900FA05BB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52A919F7298AC72600928B42 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52A919FE298AC72600928B42;
+			remoteInfo = PayBack;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		52581717298D47D900FA05BB /* PayBackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PayBackTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		52581720298D4CC800FA05BB /* TransactionViewModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewModelMock.swift; sourceTree = "<group>"; };
+		52581722298D4CD400FA05BB /* TransactionViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewModelTest.swift; sourceTree = "<group>"; };
+		52581724298D4CDF00FA05BB /* TransactionControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionControllerTest.swift; sourceTree = "<group>"; };
+		5258172A298D57F500FA05BB /* TransactionDetailsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailsViewModelTests.swift; sourceTree = "<group>"; };
+		5258172C298D57FD00FA05BB /* TransactionDetailsViewModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailsViewModelMock.swift; sourceTree = "<group>"; };
+		5258172E298D580700FA05BB /* TransactionDetailsControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailsControllerTests.swift; sourceTree = "<group>"; };
+		52581733298E8AB600FA05BB /* TransactionModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TransactionModel.xcdatamodel; sourceTree = "<group>"; };
+		52581735298E8C3300FA05BB /* LocalTransactionCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalTransactionCoreData.swift; sourceTree = "<group>"; };
+		52581737298EA35900FA05BB /* TransactionDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionDetailsController.swift; sourceTree = "<group>"; };
+		5258173B298EA6FD00FA05BB /* Components */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Components; path = Packages/Components; sourceTree = "<group>"; };
+		52A919FF298AC72600928B42 /* PayBack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PayBack.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		52A91A02298AC72600928B42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		52A91A04298AC72600928B42 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		52A91A0B298AC72700928B42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		52A91A0E298AC72700928B42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		52A91A10298AC72700928B42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52A91A17298AC77200928B42 /* TransactionsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsController.swift; sourceTree = "<group>"; };
+		52A91A19298AC77B00928B42 /* TransactionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewModel.swift; sourceTree = "<group>"; };
+		52A91A24298AC8E200928B42 /* TransactionModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionModels.swift; sourceTree = "<group>"; };
+		52A91A29298ACBCF00928B42 /* TransactionConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionConstants.swift; sourceTree = "<group>"; };
+		52A91A2B298ACD4000928B42 /* PBTransactions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PBTransactions.json; sourceTree = "<group>"; };
+		52A91A2E298ACDB100928B42 /* MockService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockService.swift; sourceTree = "<group>"; };
+		52A91A30298ACECA00928B42 /* TransactionsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsResponse.swift; sourceTree = "<group>"; };
+		52A91A32298B054200928B42 /* TransactionCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCategory.swift; sourceTree = "<group>"; };
+		52A91A35298B0C3900928B42 /* Extension + Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + Date.swift"; sourceTree = "<group>"; };
+		52A91A37298C3ACC00928B42 /* Extension + Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + Navigation.swift"; sourceTree = "<group>"; };
+		52A91A3C298C3BFF00928B42 /* TransactionDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailsViewModel.swift; sourceTree = "<group>"; };
+		52A91A40298C3C4200928B42 /* TransactionDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailsModel.swift; sourceTree = "<group>"; };
+		52A91A42298C411500928B42 /* TransactionsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsRouter.swift; sourceTree = "<group>"; };
+		52A91A45298C4C9300928B42 /* TransactionsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsRequest.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		52581714298D47D900FA05BB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52581727298D4ED700FA05BB /* Components in Frameworks */,
+				52581731298E88CE00FA05BB /* CombineCore in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52A919FC298AC72600928B42 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52A91A28298ACA2E00928B42 /* Components in Frameworks */,
+				52A91A22298AC82D00928B42 /* CombineCore in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		52581718298D47D900FA05BB /* PayBackTests */ = {
+			isa = PBXGroup;
+			children = (
+				52581729298D57CB00FA05BB /* TransactionDetailsTests */,
+				52581728298D57C000FA05BB /* TransactionsTests */,
+			);
+			path = PayBackTests;
+			sourceTree = "<group>";
+		};
+		52581728298D57C000FA05BB /* TransactionsTests */ = {
+			isa = PBXGroup;
+			children = (
+				52581720298D4CC800FA05BB /* TransactionViewModelMock.swift */,
+				52581722298D4CD400FA05BB /* TransactionViewModelTest.swift */,
+				52581724298D4CDF00FA05BB /* TransactionControllerTest.swift */,
+			);
+			path = TransactionsTests;
+			sourceTree = "<group>";
+		};
+		52581729298D57CB00FA05BB /* TransactionDetailsTests */ = {
+			isa = PBXGroup;
+			children = (
+				5258172A298D57F500FA05BB /* TransactionDetailsViewModelTests.swift */,
+				5258172C298D57FD00FA05BB /* TransactionDetailsViewModelMock.swift */,
+				5258172E298D580700FA05BB /* TransactionDetailsControllerTests.swift */,
+			);
+			path = TransactionDetailsTests;
+			sourceTree = "<group>";
+		};
+		52A919F6298AC72600928B42 = {
+			isa = PBXGroup;
+			children = (
+				52A91A1E298AC81400928B42 /* Packages */,
+				52A91A01298AC72600928B42 /* PayBack */,
+				52581718298D47D900FA05BB /* PayBackTests */,
+				52A91A00298AC72600928B42 /* Products */,
+				52A91A26298ACA2E00928B42 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		52A91A00298AC72600928B42 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				52A919FF298AC72600928B42 /* PayBack.app */,
+				52581717298D47D900FA05BB /* PayBackTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		52A91A01298AC72600928B42 /* PayBack */ = {
+			isa = PBXGroup;
+			children = (
+				52A91A02298AC72600928B42 /* AppDelegate.swift */,
+				52A91A04298AC72600928B42 /* SceneDelegate.swift */,
+				52A91A0B298AC72700928B42 /* Assets.xcassets */,
+				52A91A0D298AC72700928B42 /* LaunchScreen.storyboard */,
+				52A91A10298AC72700928B42 /* Info.plist */,
+				52A91A2B298ACD4000928B42 /* PBTransactions.json */,
+				52A91A47298C5FBB00928B42 /* Scenes */,
+				52A91A34298B0C2C00928B42 /* Helpers */,
+				52581732298E8AB600FA05BB /* TransactionModelEntity.xcdatamodeld */,
+			);
+			path = PayBack;
+			sourceTree = "<group>";
+		};
+		52A91A16298AC76100928B42 /* Transactions */ = {
+			isa = PBXGroup;
+			children = (
+				52A91A44298C4C8700928B42 /* Services */,
+				52A91A2D298ACDA700928B42 /* MockService */,
+				52A91A23298AC8D900928B42 /* Models */,
+				52A91A17298AC77200928B42 /* TransactionsController.swift */,
+				52A91A19298AC77B00928B42 /* TransactionsViewModel.swift */,
+				52A91A42298C411500928B42 /* TransactionsRouter.swift */,
+			);
+			path = Transactions;
+			sourceTree = "<group>";
+		};
+		52A91A1E298AC81400928B42 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				5258173B298EA6FD00FA05BB /* Components */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		52A91A23298AC8D900928B42 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				52A91A24298AC8E200928B42 /* TransactionModels.swift */,
+				52A91A29298ACBCF00928B42 /* TransactionConstants.swift */,
+				52A91A32298B054200928B42 /* TransactionCategory.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		52A91A26298ACA2E00928B42 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		52A91A2D298ACDA700928B42 /* MockService */ = {
+			isa = PBXGroup;
+			children = (
+				52A91A2E298ACDB100928B42 /* MockService.swift */,
+				52A91A30298ACECA00928B42 /* TransactionsResponse.swift */,
+			);
+			path = MockService;
+			sourceTree = "<group>";
+		};
+		52A91A34298B0C2C00928B42 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				52A91A35298B0C3900928B42 /* Extension + Date.swift */,
+				52A91A37298C3ACC00928B42 /* Extension + Navigation.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		52A91A39298C3BE200928B42 /* TransactionDetails */ = {
+			isa = PBXGroup;
+			children = (
+				52A91A3F298C3C3400928B42 /* Models */,
+				52A91A3C298C3BFF00928B42 /* TransactionDetailsViewModel.swift */,
+				52581737298EA35900FA05BB /* TransactionDetailsController.swift */,
+			);
+			path = TransactionDetails;
+			sourceTree = "<group>";
+		};
+		52A91A3F298C3C3400928B42 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				52A91A40298C3C4200928B42 /* TransactionDetailsModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		52A91A44298C4C8700928B42 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				52A91A45298C4C9300928B42 /* TransactionsRequest.swift */,
+				52581735298E8C3300FA05BB /* LocalTransactionCoreData.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		52A91A47298C5FBB00928B42 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				52A91A39298C3BE200928B42 /* TransactionDetails */,
+				52A91A16298AC76100928B42 /* Transactions */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		52581716298D47D900FA05BB /* PayBackTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5258171D298D47D900FA05BB /* Build configuration list for PBXNativeTarget "PayBackTests" */;
+			buildPhases = (
+				52581713298D47D900FA05BB /* Sources */,
+				52581714298D47D900FA05BB /* Frameworks */,
+				52581715298D47D900FA05BB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5258171C298D47D900FA05BB /* PBXTargetDependency */,
+			);
+			name = PayBackTests;
+			packageProductDependencies = (
+				52581726298D4ED700FA05BB /* Components */,
+				52581730298E88CE00FA05BB /* CombineCore */,
+			);
+			productName = PayBackTests;
+			productReference = 52581717298D47D900FA05BB /* PayBackTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		52A919FE298AC72600928B42 /* PayBack */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52A91A13298AC72700928B42 /* Build configuration list for PBXNativeTarget "PayBack" */;
+			buildPhases = (
+				52A919FB298AC72600928B42 /* Sources */,
+				52A919FC298AC72600928B42 /* Frameworks */,
+				5258170C298D115100FA05BB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PayBack;
+			packageProductDependencies = (
+				52A91A21298AC82D00928B42 /* CombineCore */,
+				52A91A27298ACA2E00928B42 /* Components */,
+			);
+			productName = PayBack;
+			productReference = 52A919FF298AC72600928B42 /* PayBack.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		52A919F7298AC72600928B42 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					52581716298D47D900FA05BB = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 52A919FE298AC72600928B42;
+					};
+					52A919FE298AC72600928B42 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+				};
+			};
+			buildConfigurationList = 52A919FA298AC72600928B42 /* Build configuration list for PBXProject "PayBack" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 52A919F6298AC72600928B42;
+			packageReferences = (
+				52A91A20298AC82D00928B42 /* XCRemoteSwiftPackageReference "CombineCore" */,
+			);
+			productRefGroup = 52A91A00298AC72600928B42 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				52A919FE298AC72600928B42 /* PayBack */,
+				52581716298D47D900FA05BB /* PayBackTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5258170C298D115100FA05BB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52581710298D118600FA05BB /* PBTransactions.json in Resources */,
+				5258170D298D115A00FA05BB /* Assets.xcassets in Resources */,
+				5258170E298D115A00FA05BB /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52581715298D47D900FA05BB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		52581713298D47D900FA05BB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5258172D298D57FD00FA05BB /* TransactionDetailsViewModelMock.swift in Sources */,
+				5258172B298D57F500FA05BB /* TransactionDetailsViewModelTests.swift in Sources */,
+				52581725298D4CDF00FA05BB /* TransactionControllerTest.swift in Sources */,
+				5258172F298D580700FA05BB /* TransactionDetailsControllerTests.swift in Sources */,
+				52581721298D4CC800FA05BB /* TransactionViewModelMock.swift in Sources */,
+				52581723298D4CD400FA05BB /* TransactionViewModelTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52A919FB298AC72600928B42 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52A91A43298C411500928B42 /* TransactionsRouter.swift in Sources */,
+				52A91A18298AC77200928B42 /* TransactionsController.swift in Sources */,
+				52A91A03298AC72600928B42 /* AppDelegate.swift in Sources */,
+				52A91A2F298ACDB100928B42 /* MockService.swift in Sources */,
+				52A91A38298C3ACC00928B42 /* Extension + Navigation.swift in Sources */,
+				52A91A2A298ACBCF00928B42 /* TransactionConstants.swift in Sources */,
+				52A91A46298C4C9300928B42 /* TransactionsRequest.swift in Sources */,
+				52A91A41298C3C4200928B42 /* TransactionDetailsModel.swift in Sources */,
+				52A91A05298AC72600928B42 /* SceneDelegate.swift in Sources */,
+				52A91A3D298C3BFF00928B42 /* TransactionDetailsViewModel.swift in Sources */,
+				52581738298EA35900FA05BB /* TransactionDetailsController.swift in Sources */,
+				52A91A36298B0C3900928B42 /* Extension + Date.swift in Sources */,
+				52581734298E8AB600FA05BB /* TransactionModelEntity.xcdatamodeld in Sources */,
+				52A91A31298ACECA00928B42 /* TransactionsResponse.swift in Sources */,
+				52A91A25298AC8E200928B42 /* TransactionModels.swift in Sources */,
+				52A91A1A298AC77B00928B42 /* TransactionsViewModel.swift in Sources */,
+				52581736298E8C3300FA05BB /* LocalTransactionCoreData.swift in Sources */,
+				52A91A33298B054200928B42 /* TransactionCategory.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5258171C298D47D900FA05BB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 52A919FE298AC72600928B42 /* PayBack */;
+			targetProxy = 5258171B298D47D900FA05BB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		52A91A0D298AC72700928B42 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				52A91A0E298AC72700928B42 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5258171E298D47D900FA05BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = A2735UVJR7;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = cc.travelwise.app.PayBackTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PayBack.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PayBack";
+			};
+			name = Debug;
+		};
+		5258171F298D47D900FA05BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = A2735UVJR7;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = cc.travelwise.app.PayBackTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PayBack.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PayBack";
+			};
+			name = Release;
+		};
+		52A91A11298AC72700928B42 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		52A91A12298AC72700928B42 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		52A91A14298AC72700928B42 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = A2735UVJR7;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PayBack/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = cc.travelwise.app.PayBack;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		52A91A15298AC72700928B42 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = A2735UVJR7;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PayBack/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = cc.travelwise.app.PayBack;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5258171D298D47D900FA05BB /* Build configuration list for PBXNativeTarget "PayBackTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5258171E298D47D900FA05BB /* Debug */,
+				5258171F298D47D900FA05BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52A919FA298AC72600928B42 /* Build configuration list for PBXProject "PayBack" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52A91A11298AC72700928B42 /* Debug */,
+				52A91A12298AC72700928B42 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52A91A13298AC72700928B42 /* Build configuration list for PBXNativeTarget "PayBack" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52A91A14298AC72700928B42 /* Debug */,
+				52A91A15298AC72700928B42 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		52A91A20298AC82D00928B42 /* XCRemoteSwiftPackageReference "CombineCore" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/negna1/CombineCore.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		52581726298D4ED700FA05BB /* Components */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Components;
+		};
+		52581730298E88CE00FA05BB /* CombineCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 52A91A20298AC82D00928B42 /* XCRemoteSwiftPackageReference "CombineCore" */;
+			productName = CombineCore;
+		};
+		52A91A21298AC82D00928B42 /* CombineCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 52A91A20298AC82D00928B42 /* XCRemoteSwiftPackageReference "CombineCore" */;
+			productName = CombineCore;
+		};
+		52A91A27298ACA2E00928B42 /* Components */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Components;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		52581732298E8AB600FA05BB /* TransactionModelEntity.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				52581733298E8AB600FA05BB /* TransactionModel.xcdatamodel */,
+			);
+			currentVersion = 52581733298E8AB600FA05BB /* TransactionModel.xcdatamodel */;
+			path = TransactionModelEntity.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 52A919F7298AC72600928B42 /* Project object */;
+}

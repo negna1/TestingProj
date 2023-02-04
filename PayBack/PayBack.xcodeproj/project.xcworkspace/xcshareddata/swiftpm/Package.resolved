@@ -1,0 +1,32 @@
+{
+  "pins" : [
+    {
+      "identity" : "combinecore",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/negna1/CombineCore.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "70bee85dbe17edebb552aa9aa973612a6980b7ca"
+      }
+    },
+    {
+      "identity" : "sdwebimage",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SDWebImage/SDWebImage.git",
+      "state" : {
+        "revision" : "6c6b951845a520fa7e8356e28adb5339c0f008d3",
+        "version" : "5.15.0"
+      }
+    },
+    {
+      "identity" : "snapkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SnapKit/SnapKit.git",
+      "state" : {
+        "revision" : "f222cbdf325885926566172f6f5f06af95473158",
+        "version" : "5.6.0"
+      }
+    }
+  ],
+  "version" : 2
+}
